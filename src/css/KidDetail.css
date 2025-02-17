@@ -1,0 +1,80 @@
+.kid-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;  /* This aligns children to the left */
+    padding: 20px;
+    width: 100%;  /* Ensure the container takes full width */
+  }
+  
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .kid-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+  
+  .image-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .image-options button {
+    padding: 5px 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .camera-container video {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 10px;
+  }
+  
+  .camera-container button {
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .kid-subtitle {
+    margin-top: 15px;
+    margin-bottom: 5px;
+  }
+  
+  .navi-home {
+    align-self: flex-start;  /* This ensures the button aligns to the left */
+    padding: 10px 20px;
+    margin-bottom: 50px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    /* background-color: #3498db;  */
+    color: white;  /* Added text color for visibility */
+  }
+  
