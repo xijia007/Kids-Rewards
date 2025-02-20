@@ -1,6 +1,6 @@
-import React from 'react';
-import NaviHome from '../utils/navi-home';
-import '../css/Signup.css'; 
+import React from 'react'
+import NaviHome from '../utils/navi-home'
+import '../css/Signup.css'
 
 function Signup() {
   return (
@@ -11,8 +11,14 @@ function Signup() {
       <form className="signup-form">
         <input type="text" placeholder="Username" className="signup-input" />
         <input type="email" placeholder="Email" className="signup-input" />
-        <input type="password" placeholder="Password" className="signup-input" />
-        <button type="submit" className="signup-button">Sign Up</button>
+        <input
+          type="password"
+          placeholder="Password"
+          className="signup-input"
+        />
+        <button type="submit" className="signup-button">
+          Sign Up
+        </button>
       </form>
 
       <div className="signup-options">
@@ -23,11 +29,13 @@ function Signup() {
         </div>
       </div>
 
-      <p className="login-link">Already have an account? <a href="#">Log in</a></p>
+      <p className="login-link">
+        Already have an account? <a href="#">Log in</a>
+      </p>
 
       <NaviHome className="home-button" />
     </div>
-  );
+  )
 }
 
-export default Signup;
+export default Signup

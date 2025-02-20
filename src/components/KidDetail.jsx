@@ -50,24 +50,23 @@
 // //     <div className="kid-container">
 // //       <h1>Kid Detail Page</h1>
 // //       <div className='navi-home'> <NaviHome /></div>
-     
 
 // //       <div className="image-container">
-// //         <img 
-// //           src={currentImage} 
-// //           alt="Kid's Image" 
-// //           className="kid-image" 
+// //         <img
+// //           src={currentImage}
+// //           alt="Kid's Image"
+// //           className="kid-image"
 // //           onClick={handleImageClick}
 // //         />
 // //         <div className="image-options">
 // //           <button onClick={handleImageClick}>Choose Image</button>
 // //           <button onClick={startCamera}>Take Photo</button>
 // //         </div>
-// //         <input 
-// //           type="file" 
-// //           ref={fileInputRef} 
-// //           onChange={handleImageChange} 
-// //           style={{display: 'none'}} 
+// //         <input
+// //           type="file"
+// //           ref={fileInputRef}
+// //           onChange={handleImageChange}
+// //           style={{display: 'none'}}
 // //           accept="image/*"
 // //         />
 // //       </div>
@@ -81,7 +80,7 @@
 
 // //       <h4 className='kid-subtitle'>Kid Name: Yixi</h4>
 // //       <h4 className='kid-subtitle'>Total Points: 10</h4>
-      
+
 // //       <h4 className='kid-subtitle'>Add Points:</h4>
 // //       <NaviAddPoints />
 
@@ -165,21 +164,21 @@
 //       <div className='navi-home'><NaviHome /></div>
 
 //       <div className="image-container">
-//         <img 
-//           src={currentImage} 
-//           alt={kid.name} 
-//           className="kid-image" 
+//         <img
+//           src={currentImage}
+//           alt={kid.name}
+//           className="kid-image"
 //           onClick={handleImageClick}
 //         />
 //         <div className="image-options">
 //           <button onClick={handleImageClick}>Choose Image</button>
 //           <button onClick={startCamera}>Take Photo</button>
 //         </div>
-//         <input 
-//           type="file" 
-//           ref={fileInputRef} 
-//           onChange={handleImageChange} 
-//           style={{display: 'none'}} 
+//         <input
+//           type="file"
+//           ref={fileInputRef}
+//           onChange={handleImageChange}
+//           style={{display: 'none'}}
 //           accept="image/*"
 //         />
 //       </div>
@@ -194,7 +193,7 @@
 //       <h4 className='kid-subtitle'>Kid Name: {kid.name}</h4>
 //       <h4 className='kid-subtitle'>Age: {kid.age}</h4>
 //       <h4 className='kid-subtitle'>Total Points: {kid.points}</h4>
-      
+
 //       <h4 className='kid-subtitle'>Add Points:</h4>
 //       <NaviAddPoints />
 
@@ -206,35 +205,37 @@
 
 // export default KidDetail;
 
-import React, { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
-import NaviHome from '../utils/navi-home';
-import NaviRewardDetails from '../utils/navi-rewards';
-import NaviAddPoints from '../utils/nav-add-points';
-import '../css/KidDetail.css';
+import React, { useEffect } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
+import NaviHome from '../utils/navi-home'
+import NaviRewardDetails from '../utils/navi-rewards'
+import NaviAddPoints from '../utils/nav-add-points'
+import '../css/KidDetail.css'
 
 function KidDetail() {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const { kid: initialKid } = location.state || {};
+  const location = useLocation()
+  const navigate = useNavigate()
+  const { kid: initialKid } = location.state || {}
 
   useEffect(() => {
     if (!initialKid) {
-      navigate('/');
+      navigate('/')
     }
-  }, [initialKid, navigate]);
+  }, [initialKid, navigate])
 
-  if (!initialKid) return null;
+  if (!initialKid) return null
 
   return (
     <div className="kid-container">
       <h1>{initialKid.name}'s Details</h1>
-      <div className="navi-home"><NaviHome /></div>
+      <div className="navi-home">
+        <NaviHome />
+      </div>
 
       <div className="profile-section">
         {initialKid.image && (
-          <img 
-            src={initialKid.image} 
+          <img
+            src={initialKid.image}
             alt={initialKid.name}
             className="kid-avatar-large"
           />
@@ -274,7 +275,8 @@ function KidDetail() {
                 <span className="history-date">{item.date}</span>
                 <span className="history-description">{item.description}</span>
                 <span className={`history-points ${item.type}`}>
-                  {item.type === 'earned' ? '+' : '-'}{item.points}
+                  {item.type === 'earned' ? '+' : '-'}
+                  {item.points}
                 </span>
               </div>
             ))
@@ -284,7 +286,7 @@ function KidDetail() {
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default KidDetail;
+export default KidDetail

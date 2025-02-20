@@ -1,15 +1,17 @@
 // navi-home.jsx
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export default function NaviHome() {
-    const navigate = useNavigate();
+  const navigate = useNavigate()
 
-    const navigateToHome = () => {
-        navigate('/');
-    }
+  const navigateToHome = () => {
+    navigate('/')
+  }
 
-    return (
-        <button onClick={navigateToHome} className='back-button'>Back to Home</button>
-    );
+  return (
+    <button onClick={navigateToHome} className="back-button">
+      Back to Home
+    </button>
+  )
 }
