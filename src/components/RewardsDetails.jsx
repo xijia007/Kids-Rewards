@@ -33,7 +33,8 @@ export default function RewardsDetails() {
   }, {})
 
   return (
-    <>
+    <div className='reward-detail-container'>
+      
       <div className="header-content">
         <h1>Rewards Details Page</h1>
         <NaviKidDetail />
@@ -77,11 +78,13 @@ export default function RewardsDetails() {
           />
         </div>
       </div>
+
       <div className="button-container">
         <button onClick={addNewReward} className="button">
           Add New Reward
         </button>
       </div>
-    </>
+
+    </div>
   )
 }

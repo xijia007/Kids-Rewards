@@ -9,14 +9,31 @@ import KidDetail from './components/KidDetail'
 import RewardsDetails from './components/RewardsDetails'
 import AddPoints from './components/AddPoints'
 import Signup from './components/Signup'
+import Login from './components/Login'
+import SignUp from './components/Signup'
 import AddKids from './components/AddKids'
 import { useKids } from './context/KidsContext'
 import { KidsProvider } from './context/KidsContext'
 import './css/Home.css'
+import { useAuth } from './context/AuthContex'
 
 function HomeContent() {
+
+  // const { globalUser, isLoading, globalData} = useAuth()
+  // const isAuthenticated = globalUser
+  // const isData = globalData && !!Object.keys(globalData || {}).length
+
+  // const authenticatedContent = (
+  //   <>
+  //     <Stats />
+  //     <History />
+  //   </>
+  // )
+
   const navigate = useNavigate()
+
   const { kids } = useKids()
+
   const navigateToKidDetail = kid => {
     navigate('/kid-detail', {
       state: {
@@ -29,20 +46,23 @@ function HomeContent() {
     })
   }
 
-  const navigateToSignUp = () => navigate('/sign-up')
+  const navigateToLogin = () => navigate('/login')
+
   const navigateToAddKids = () => navigate('/add-kids')
 
   return (
     <div className="app-container">
+      
       <header className="header">
         <h1 className="text-gradient">Kids Rewards</h1>
-        <button onClick={navigateToSignUp} className="sign-up-btn">
+        <button onClick={navigateToLogin} className="sign-up-btn">
           <span>Sign up/Sign in</span>
           <i className="fa-solid fa-user-circle"></i>
         </button>
       </header>
 
       <main className="main-content">
+        
         <div className="card-container">
           {kids.map(kid => (
             <div
@@ -68,6 +88,7 @@ function HomeContent() {
             <h2>Add Kids</h2>
             <p>Add more children to your account</p>
           </div>
+
         </div>
       </main>
 
@@ -107,6 +128,8 @@ function Home() {
             path="/add-kids"
             element={<AddKids onAddKid={handleAddKid} />}
           />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<SignUp />} />
         </Routes>
       </Router>
     </KidsProvider>

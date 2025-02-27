@@ -1,9 +1,14 @@
 .kid-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;  /* This aligns children to the left */
-    padding: 20px;
-    width: 100%;  /* Ensure the container takes full width */
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  display: flex;          /* Uncomment this */
+  flex-direction: column; /* Add this */
+  position: relative;     /* For absolute positioning alternative */
   }
   
   .image-container {

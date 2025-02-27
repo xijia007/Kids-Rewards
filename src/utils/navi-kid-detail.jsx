@@ -4,12 +4,12 @@ import { useNavigate } from 'react-router-dom'
 export default function NaviKidDetail() {
   const navigate = useNavigate()
 
-  const navigateToHome = () => {
+  const navigateToKidDetail = () => {
     navigate('/kid-detail')
   }
 
   return (
-    <button onClick={navigateToHome} className="back-button">
+    <button onClick={navigateToKidDetail} className="back-button">
       Go to kid Detail Page
     </button>
   )
